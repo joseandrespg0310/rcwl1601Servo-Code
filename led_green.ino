@@ -24,6 +24,9 @@ void setup() {
   // Configurar el pin del LED como salida
   pinMode(led, OUTPUT);
 
+  // Encender el LED de forma permanente
+  digitalWrite(led, HIGH);
+
   // Iniciar comunicación serial para depuración
   Serial.begin(9600);
   Serial.println("Inicializando sistema...");
@@ -34,12 +37,6 @@ void setup() {
 }
 
 void loop() {
-  // Manejo del LED (parpadeo constante)
-  digitalWrite(led, HIGH);
-  delay(1000);
-  digitalWrite(led, LOW);
-  delay(1000);
-
   // Lógica del sensor ultrasonido
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
